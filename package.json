@@ -1,7 +1,7 @@
 {
   "name": "hide-tree",
   "main": "./lib/hide-tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hide Tree",
   "repository": "https://github.com/skandasoft/hide-tree",
   "license": "MIT",
@@ -9,13 +9,13 @@
     "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
-    "atom-utils":"0.5.0"
+    "atom-utils": "0.5.0"
   },
-  "keywords":[
+  "keywords": [
     "hide tree",
     "hide",
-	"tree view",
-	"tree-view",
+    "tree view",
+    "tree-view",
     "treeview",
     "autohide",
     "auto hide"
