@@ -1,0 +1,71 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.hide-tree {
+    height:100%;
+}
+
+.hide-tree .gutter{
+  height:100%;
+  width:2px;
+  background-color:green;
+}
+
+.hide-tree span {
+  opacity: 0.7;
+}
+
+.hide-tree .octicon-lock::before{
+  content: '\f06a';
+}
+.hide-tree .octicon-move-right::before{
+  content: '\f0a9';
+}
+.hide-tree .octicon-move-left::before{
+  content: '\f074';
+}
+.hide-tree span.octicon-lock{
+  color:red;
+  position:absolute;
+  z-index:1000;
+}
+
+.hide-tree span.active.octicon-lock {
+  color:green;
+}
+
+.hide-tree span.octicon-lock.active:hover {
+  color:darkgreen;
+}
+
+
+.hide-tree span.octicon-lock:hover {
+  opacity: 1.0;
+  color:darkred;
+}
+
+.hide-tree span.octicon-move-right{
+  color:yellow;
+  position:absolute;
+  z-index:1000;
+  top:95%;
+}
+
+.hide-tree span.octicon-move-left{
+  color:yellow;
+  position:absolute;
+  z-index:1000;
+  top:95%;
+}
+.hide-tree span.mega-octicon{
+  left:5px;
+  right:0px;
+}
+
+.hide-tree.right span.mega-octicon{
+  right: 0px;
+  left: -35px;
+}
