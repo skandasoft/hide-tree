@@ -1,7 +1,6 @@
 HideTreeView = require './hide-tree-view'
 {CompositeDisposable} = require 'atom'
 {requirePackages} = require 'atom-utils'
-{$, $$,$$$, View}  = require 'atom'
 module.exports = HideTree =
   hideTreeView: null
   modalPanel: null

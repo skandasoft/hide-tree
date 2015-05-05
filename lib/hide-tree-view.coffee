@@ -1,4 +1,4 @@
-{$, $$,$$$, View}  = require 'atom'
+{View,$} = require("atom-space-pen-views")
 {requirePackages} = require 'atom-utils'
 module.exports =
 class HideTreeView extends View
@@ -64,7 +64,7 @@ class HideTreeView extends View
 
   initializeTree: (@treeView)->
     unless @treeView
-      atom.commands.dispatch(atom.workspaceView[0],'tree-view:toggle')
+      atom.commands.dispatch(atom.views.getView(atom.workspace),'tree-view:toggle')
       setTimeout =>
         requirePackages('tree-view').then ([treeView]) =>
           if treeView.treeView
