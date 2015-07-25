@@ -101,8 +101,10 @@ class HideTreeView extends View
   focusWatch: ->
     atom.workspace.observeTextEditors (editor)=>
       view = atom.views.getView(editor)
-      scrollView = view.shadowRoot.querySelector('.scroll-view')
-      scrollView?.addEventListener  'click', =>
+      # debugger
+      # scrollView = view.shadowRoot.querySelector('.scroll-view')
+      # scrollView?.addEventListener  'click', =>
+      view?.addEventListener  'click', =>
           @closeTree() if @treeView
           view.focus()
 

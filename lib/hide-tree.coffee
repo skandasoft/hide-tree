@@ -9,7 +9,7 @@ module.exports = HideTree =
     focus:
       title: 'Hide on Focus'
       type: 'boolean'
-      default: false
+      default: true
     animateTime:
       title: 'Animation Time'
       type: 'integer'
