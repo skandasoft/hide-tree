@@ -9,6 +9,7 @@ class HideTreeView extends View
     rightSide = atom.config.get('tree-view.showOnRightSide')
     @div class:'hide-tree', =>
       @span class:'mega-octicon octicon-lock',outlet:'lock'
+      # @span class:'mega-octicon octicon-pin',outlet:'push'
       @div class:'gutter', outlet:'gutter'
       @span class:'mega-octicon octicon-move-left',outlet:'left'
       @span class:'mega-octicon octicon-move-right',outlet:'right'
@@ -62,6 +63,16 @@ class HideTreeView extends View
       @locked = !@locked
       $(` this`).toggleClass 'active',@locked
 
+  addAlignButton: ->
+      $pin = $('<span class="mega-octicon octicon-pin"/>')
+      @treeView.append($pin)
+      $pin.on 'click', =>
+        $(` this`).toggleClass('push-pin')
+        if @treeView.css('position') is 'relative'
+          @treeView.css 'position', 'absolute'
+        else
+          @treeView.css 'position', 'relative'
+
   initializeTree: (@treeView)->
     unless @treeView
       atom.commands.dispatch(atom.views.getView(atom.workspace),'tree-view:toggle')
@@ -69,6 +80,7 @@ class HideTreeView extends View
         requirePackages('tree-view').then ([treeView]) =>
           if treeView?.treeView
             @treeView = treeView.treeView
+            @addAlignButton()
             if atom.config.get 'hide-tree.focus'
               @focusWatch()
             else
@@ -76,6 +88,8 @@ class HideTreeView extends View
               @treeView.toggle() if @treeView.isVisible() and @gutter.isVisible()
       ,1000
       return false
+    else
+      @addAlignButton()
     @treeView.toggle() if @treeView.isVisible() and @gutter.isVisible() and not atom.config.get('hide-tree.focus')
     if atom.config.get 'hide-tree.focus'
       @focusWatch()
@@ -101,9 +115,6 @@ class HideTreeView extends View
   focusWatch: ->
     atom.workspace.observeTextEditors (editor)=>
       view = atom.views.getView(editor)
-      # debugger
-      # scrollView = view.shadowRoot.querySelector('.scroll-view')
-      # scrollView?.addEventListener  'click', =>
       view?.addEventListener  'click', =>
           @closeTree() if @treeView
           view.focus()

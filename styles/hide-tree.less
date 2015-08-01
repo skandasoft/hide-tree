@@ -15,9 +15,38 @@
   background-color:green;
 }
 
+span.mega-octicon.octicon-pin.push-pin:hover {
+  color: red;
+}
+span.mega-octicon.octicon-pin.push-pin {
+  color: darkred;
+}
+
+
 .hide-tree span {
   opacity: 0.7;
 }
+
+span.mega-octicon.octicon-pin:hover {
+  color:darkgreen;
+}
+
+span.mega-octicon.octicon-pin{
+  color:green;
+  position:absolute;
+  z-index:1000;
+  top:20px;
+  right:5px;
+  opacity: 0.7;
+}
+
+.octicon-pin::before{
+  content: '\f041';
+}
+.hide-tree span.octicon-lock.active:hover {
+  color:darkgreen;
+}
+
 
 .hide-tree .octicon-lock::before{
   content: '\f06a';
@@ -32,6 +61,7 @@
   color:red;
   position:absolute;
   z-index:1000;
+  top:20px;
 }
 
 .hide-tree span.active.octicon-lock {
