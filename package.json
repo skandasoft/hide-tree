@@ -1,7 +1,7 @@
 {
   "name": "hide-tree",
   "main": "./lib/hide-tree",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Hide Tree",
   "repository": "https://github.com/skandasoft/hide-tree",
   "license": "MIT",
