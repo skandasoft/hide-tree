@@ -70,8 +70,10 @@ class HideTreeView extends View
         $(` this`).toggleClass('push-pin')
         if @treeView.css('position') is 'relative'
           @treeView.css 'position', 'absolute'
+          @treeView.css 'z-index', '1000'
         else
           @treeView.css 'position', 'relative'
+          @treeView.css 'z-index', ''
 
   initializeTree: (@treeView)->
     unless @treeView
