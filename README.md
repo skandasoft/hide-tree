@@ -31,3 +31,7 @@ changes: 07/05/2015 - QUick fix for the pin tree
 
 doesn't work on when push to the right. have to use the unpin and push to the right.
 will fix later. but work for regular cases.
+
+changes: 08/02/2015 -
+
+fix the toggle side. push-pin for right side would be addeed soon..

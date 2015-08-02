@@ -27,6 +27,7 @@ class HideTreeView extends View
     @toggleClass('right',rightSide)
     @left.on 'click', (evt)=>
       return unless atom.config.get('tree-view.showOnRightSide')
+      @treeView.css 'position', 'relative'
       atom.commands.dispatch(atom.views.getView(atom.workspace),'tree-view:toggle-side') if atom.views.getView(atom.workspace)
       panelView = @parent().parent()
       @toggleClass('right',false)
@@ -36,6 +37,7 @@ class HideTreeView extends View
 
     @right.on 'click', (evt)=>
       return if atom.config.get('tree-view.showOnRightSide')
+      @treeView.css 'position', 'relative'
       atom.commands.dispatch(atom.views.getView(atom.workspace),'tree-view:toggle-side') if atom.views.getView(atom.workspace)
       panelView = @parent().parent()
       @toggleClass('right',true)
