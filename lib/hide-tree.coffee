@@ -23,23 +23,15 @@ module.exports = HideTree =
 
 
   activate: (state) ->
-    # console.log 'In the acitvate state',state
     @hideTreeView = new HideTreeView(state.locked)
     if atom.config.get('tree-view.showOnRightSide')
       @modalPanel = atom.workspace.addRightPanel item:@hideTreeView
     else
       @modalPanel = atom.workspace.addLeftPanel item:@hideTreeView
 
-    # # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
-    # @subscriptions = new CompositeDisposable
-    #
-    # # Register command that toggles this view
-    # @subscriptions.add atom.commands.add 'atom-workspace', 'hide-tree:toggle': => @toggle()
   deactivate: ->
     @hideTreeView.destroy()
-    # @modalPanel.destroy()
-    # @subscriptions.dispose()
+    @modalPanel.destroy()
 
   serialize: ->
     locked: @hideTreeView.locked
-    # console.log 'sericalized',@hideTreeView.locked
