@@ -16,7 +16,10 @@
   width:2px;
   background-color:green;
 }
-
+span.mega-octicon{
+  font-family: "Octicons Regular";
+  font-size: 18px;
+}
 span.mega-octicon.octicon-pin.push-pin:hover {
   color: red;
 }
@@ -43,21 +46,21 @@ span.mega-octicon.octicon-pin{
 }
 
 .octicon-pin::before{
-  content: '\f041';
+  content: "\f041";
 }
 .hide-tree span.octicon-lock.active:hover {
   color:darkgreen;
 }
 
 
-.hide-tree .octicon-lock::before{
-  content: '\f06a';
+.hide-tree .mega-octicon.octicon-lock::before{
+  content: "\f06a";
 }
 .hide-tree .octicon-move-right::before{
-  content: '\f0a9';
+  content: "\f0a9";
 }
 .hide-tree .octicon-move-left::before{
-  content: '\f074';
+  content: "\f074";
 }
 .hide-tree span.octicon-lock{
   color:red;
