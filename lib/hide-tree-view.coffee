@@ -73,6 +73,7 @@ class HideTreeView extends View
         if @treeView.css('position') is 'relative'
           @treeView.css 'position', 'absolute'
           @treeView.css 'z-index', '1000'
+          @treeView.css 'height', '100%'
         else
           @treeView.css 'position', 'relative'
           @treeView.css 'z-index', ''
